@@ -1,0 +1,22 @@
+## Overview
+
+Voice Journal is a hands-free journal. You record an entry, the app transcribes your speech,
+analyzes the sentiment of what you said, and tracks your mood over time in a chart with a
+history of every entry.
+
+## How it's built
+
+- **Machine learning client** that handles transcription and sentiment analysis.
+- **Flask web app** for recording, uploading and browsing entries.
+- **MongoDB** for storing transcripts and sentiment results.
+- Each subsystem runs in its own **Docker** container inside a monorepo, with its own **GitHub Actions** pipeline for testing, publishing images to Docker Hub, and deploying to DigitalOcean.
+
+## What I practised
+
+Integrating an ML component into a real web application, designing the data flow between
+services, and containerizing a multi-service system.
+
+## What I'd improve today
+
+- Evaluate the sentiment model on a labeled sample of entries and report its accuracy.
+- Process recordings asynchronously with a job queue so uploads return instantly.

@@ -1,0 +1,21 @@
+## Overview
+
+WEARther combines real-time weather data with curated outfit recommendations. You save the
+locations you care about, and the app shows the current conditions for each one alongside an
+outfit suggestion that fits the weather.
+
+## How it's built
+
+- **Monorepo of Dockerized services:** a Python web service and a MongoDB database, each in its own container.
+- **CI/CD per service:** every subsystem has its own GitHub Actions pipeline that runs automated tests, builds a Docker image and pushes it to Docker Hub.
+- **Automatic deployment** to a DigitalOcean server.
+
+## What I practised
+
+Teamwork on a shared codebase, database integration, containerization, and building
+deployment pipelines that ship on every merge.
+
+## What I'd improve today
+
+- Add end-to-end tests that cover the full login → location → recommendation flow.
+- Cache weather API responses to cut latency and stay within rate limits.
