@@ -32,10 +32,8 @@ export const projects: Project[] = [
       poster: "/images/wearther-poster.jpg",
     },
     links: [
-      {
-        label: "Source code",
-        href: "https://github.com/software-students-fall2024/5-final-java_and_the_scripts_1",
-      },
+      // Hidden until the repo is public on your own account:
+      // { label: "Source code", href: "https://github.com/software-students-fall2024/5-final-java_and_the_scripts_1" },
     ],
   },
   {
@@ -52,10 +50,8 @@ export const projects: Project[] = [
       poster: "/images/voice-journal-poster.jpg",
     },
     links: [
-      {
-        label: "Source code",
-        href: "https://github.com/software-students-fall2024/4-containers-java-and-the-scripts-1",
-      },
+      // Hidden until the repo is public on your own account:
+      // { label: "Source code", href: "https://github.com/software-students-fall2024/4-containers-java-and-the-scripts-1" },
     ],
   },
   {
@@ -67,10 +63,8 @@ export const projects: Project[] = [
     role: "Team project",
     tags: ["Python", "pytest", "pipenv", "PyPI", "GitHub Actions"],
     links: [
-      {
-        label: "Source code",
-        href: "https://github.com/software-students-fall2024/3-python-package-java_and_the_scripts_",
-      },
+      // Hidden until the repo is public on your own account:
+      // { label: "Source code", href: "https://github.com/software-students-fall2024/3-python-package-java_and_the_scripts_" },
       // TODO: add { label: "PyPI package", href: "https://pypi.org/project/<name>/" }
     ],
   },
@@ -87,10 +81,8 @@ export const projects: Project[] = [
         label: "Figma prototype",
         href: "https://www.figma.com/proto/x2JhHpZTehmD7ZdGMTlu7I/SEprojectwireframe?node-id=0-1&t=jdBQfUi0t9potZVz-1",
       },
-      {
-        label: "Source code",
-        href: "https://github.com/software-students-fall2024/1-specification-java-and-the-scripts",
-      },
+      // Hidden until the repo is public on your own account:
+      // { label: "Source code", href: "https://github.com/software-students-fall2024/1-specification-java-and-the-scripts" },
     ],
   },
 ];
