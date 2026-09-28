@@ -33,12 +33,13 @@ export default function Home() {
           </div>
         </div>
         <Image
-          src="/images/profile.jpg"
+          src="/images/newprofile.png"
           alt="Portrait of Natalie Ovcharov"
-          width={413}
-          height={531}
+          width={800}
+          height={800}
           priority
-          className="mx-auto w-56 rounded-2xl border border-white/10 object-cover shadow-2xl shadow-sky-500/10 sm:w-64"
+          sizes="(min-width: 640px) 18rem, 14rem"
+          className="mx-auto aspect-square w-56 rounded-2xl border border-white/10 object-cover shadow-2xl shadow-sky-500/10 sm:w-72"
         />
       </section>
 
