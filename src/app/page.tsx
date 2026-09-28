@@ -1,13 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import ProjectCard from "@/components/ProjectCard";
+import ExperienceList from "@/components/ExperienceList";
 import TypingHeadline from "@/components/TypingHeadline";
-import { projects } from "@/lib/projects";
+import { experience } from "@/lib/experience";
 import { site } from "@/lib/site";
 
 export default function Home() {
-  const featured = projects.filter((p) => p.featured);
-
   return (
     <>
       <section className="grid items-center gap-12 md:grid-cols-[1fr_auto]">
@@ -44,19 +42,17 @@ export default function Home() {
         />
       </section>
 
-      <section aria-labelledby="featured" className="mt-28">
+      <section aria-labelledby="experience" className="mt-28">
         <div className="flex items-end justify-between gap-4">
-          <h2 id="featured" className="text-2xl font-semibold tracking-tight text-white">
-            Featured projects
+          <h2 id="experience" className="text-2xl font-semibold tracking-tight text-white">
+            Experience
           </h2>
-          <Link href="/projects" className="text-sm text-sky-300 hover:text-sky-200">
-            All projects →
+          <Link href="/resume" className="text-sm text-sky-300 hover:text-sky-200">
+            Full resume →
           </Link>
         </div>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          {featured.map((p) => (
-            <ProjectCard key={p.slug} project={p} />
-          ))}
+        <div className="mt-10 rounded-2xl border border-white/10 bg-zinc-950/70 p-6 backdrop-blur sm:p-10">
+          <ExperienceList items={experience.slice(0, 3)} />
         </div>
       </section>
     </>
