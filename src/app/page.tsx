@@ -13,8 +13,7 @@ export default function Home() {
           <TypingHeadline text="Hi. I'm Natalie." />
           <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-300">
             I&apos;m a software engineer who loves working at the intersection of AI and
-            design, from training computer vision models to designing and building the
-            apps people use them through.
+            design, and bringing ideas to life.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
