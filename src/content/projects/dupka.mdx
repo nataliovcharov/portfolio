@@ -1,0 +1,24 @@
+## Overview
+
+Dupka (Macedonian for pothole) is a web app for reporting road damage in Skopje. I started it because I kept hitting potholes myself. They get reported in Facebook groups, in emails to the city, or not at all, so nobody can see what's already been reported.
+
+You take a photo, check the spot on the map and send it. A model finds the damage and how bad it is, and the report shows up on a public map.
+
+## How it's built
+
+- **Backend:** FastAPI with PostgreSQL and PostGIS. A worker picks up new reports from a Postgres job queue (`SELECT ... FOR UPDATE SKIP LOCKED`), so there's no Redis or Celery to run.
+- **Model:** YOLO26s, trained on RDD2022 on a free Colab GPU. It gets 0.64 mAP50 overall on the test split and 0.51 on potholes. The detection threshold comes from the F1 curve, not from a few photos.
+- **Moderation:** CLIP checks if a photo is a road and if it's safe to show. When the model isn't sure, the report goes to a review page, and my decisions are saved next to what the model said, so they become training data.
+- **Privacy:** faces and number plates are blurred before anyone sees a photo, with two small local models. Only the blurred photo is kept.
+- **Frontend:** React and TypeScript with a MapLibre map. Reports of the same spot are grouped into one dot with a photo gallery, and the app is in Macedonian and English.
+- Tests, CI on every pull request, and a production setup with Docker Compose that I tested locally.
+
+## What I learned
+
+Potholes are the weakest class, and the reason is the data: RDD2022 is dashcam footage where potholes are small and far away, while people using the app take close-ups. Even so, it found the pothole in most of the real phone photos I tried. I also wrote down every bigger decision, like the training data and the hosting, with the options I compared and why I picked one.
+
+## What's next
+
+- Training on more close-up pothole photos, including my own from Skopje.
+- Deploying it, so people in Skopje can use it.
+- Albanian, the third language.
