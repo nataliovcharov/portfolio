@@ -1,0 +1,22 @@
+## Overview
+
+HydroForest is a water tracking app that makes drinking enough water a bit of a game. Every time you log a bottle, the tree you picked grows a stage, and over time you build up your own forest. The app keeps your current and longest daily streak, shows your history in a calendar, and lets you add friends and compare with them on a leaderboard.
+
+We built it as a team of five.
+
+## How it's built
+
+- **Frontend:** React with React Router, and Framer Motion for the animations, like the tree growing when you water it.
+- **Backend:** Node.js and Express with a MongoDB database through Mongoose.
+- **Accounts:** sign up and sign in with JWT through Passport, passwords hashed with bcrypt, and every input checked with express-validator. You can change your email or password, or reset it if you forget it.
+- **Tests:** 26 Mocha and Chai tests for the API, with coverage reports from c8.
+- **Docker** for running the backend.
+
+## What I practised
+
+Building a full app with a team from start to finish: splitting the work, agreeing on the API between frontend and backend, and handling accounts and passwords properly.
+
+## What I'd improve today
+
+- Add end to end tests for the main flow, from signing up to watering a tree.
+- Send reminders to drink water, which is the part a habit app needs most.

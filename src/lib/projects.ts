@@ -19,6 +19,31 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "dupka",
+    title: "Dupka",
+    summary:
+      "A web app for reporting potholes in Skopje. A YOLO model I trained finds the damage, faces and plates get blurred, and reports show up on a public map.",
+    year: "2026",
+    role: "Solo project",
+    tags: ["Python", "FastAPI", "PostGIS", "React", "PyTorch", "YOLO", "Docker"],
+    featured: true,
+    video: {
+      src: "/videos/dupka-demo.mp4",
+      poster: "/images/dupka-poster.jpg",
+    },
+    links: [{ label: "Source code", href: "https://github.com/nataliovcharov/dupka" }],
+  },
+  {
+    slug: "hydroforest",
+    title: "HydroForest",
+    summary:
+      "A water tracking app where every bottle you drink grows a tree in your own digital forest, with daily streaks, a leaderboard and friends.",
+    year: "2025",
+    role: "Team project",
+    tags: ["React", "Node.js", "Express", "MongoDB", "JWT", "Mocha"],
+    links: [],
+  },
+  {
     slug: "wearther",
     title: "WEARther",
     summary:
@@ -27,10 +52,6 @@ export const projects: Project[] = [
     role: "Team project",
     tags: ["Python", "MongoDB", "Docker", "GitHub Actions", "DigitalOcean"],
     featured: true,
-    video: {
-      src: "/videos/wearther-demo.mp4",
-      poster: "/images/wearther-poster.jpg",
-    },
     links: [
       // Hidden until the repo is public on your own account:
       // { label: "Source code", href: "https://github.com/software-students-fall2024/5-final-java_and_the_scripts_1" },
@@ -45,10 +66,6 @@ export const projects: Project[] = [
     role: "Team project",
     tags: ["Machine Learning", "Flask", "MongoDB", "Docker", "GitHub Actions"],
     featured: true,
-    video: {
-      src: "/videos/voice-journal-demo.mp4",
-      poster: "/images/voice-journal-poster.jpg",
-    },
     links: [
       // Hidden until the repo is public on your own account:
       // { label: "Source code", href: "https://github.com/software-students-fall2024/4-containers-java-and-the-scripts-1" },

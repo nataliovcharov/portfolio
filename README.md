@@ -1,38 +1,38 @@
-# Natalie Ovcharov — Portfolio
+# Portfolio
 
-Personal portfolio site built with **Next.js 16** (App Router), **TypeScript**, **Tailwind CSS 4** and **MDX**, deployed on **Netlify**.
+My personal site. It's built with Next.js 16 (App Router), TypeScript, Tailwind CSS 4 and MDX, and it's deployed on Netlify.
 
-## Run locally
+## Running it
 
 ```bash
 npm install
-npm run dev     # http://localhost:3000
+npm run dev
 ```
 
-Other scripts: `npm run build` (production build), `npm run lint`.
+It runs at http://localhost:3000. `npm run build` makes a production build and `npm run lint` checks the code.
 
-## Project structure
+## Where things are
 
 ```
 src/
-  app/                   Routes (home, projects, project/[slug], resume, contact)
-  components/            UI components (navbar, particle background, cards…)
-  content/projects/      One .mdx write-up per project
-  lib/projects.ts        Project list: titles, tags, links, videos
-  lib/site.ts            Name, email, social links, site URL
-public/                  Images, demo videos, resume.pdf
+  app/                   pages (home, projects, project/[slug], resume, contact)
+  components/            navbar, particle background, cards and so on
+  content/projects/      one .mdx write-up per project
+  lib/projects.ts        the project list: titles, tags, links, videos
+  lib/site.ts            name, email, social links, site address
+public/                  images, demo videos, resume.pdf
 ```
 
-## Add a project
+## Adding a project
 
-1. Add an entry to `src/lib/projects.ts` (the `slug` becomes the URL).
-2. Create `src/content/projects/<slug>.mdx` with the write-up.
-3. Optional: put a demo video in `public/videos/` and a poster image in `public/images/`.
-   Compress videos first, e.g.
-   `ffmpeg -i in.mp4 -vf "fps=30,scale=-2:1000" -c:v libx264 -crf 28 -an -movflags +faststart out.mp4`
+1. Add it to `src/lib/projects.ts`. The `slug` becomes the address.
+2. Write `src/content/projects/<slug>.mdx`.
+3. If there's a demo, put the video in `public/videos/` and a poster image in `public/images/`. Shrink the video first, for example:
 
-## Deployment
+   ```bash
+   ffmpeg -i in.mp4 -vf "fps=30,scale=-2:1000" -c:v libx264 -crf 28 -an -movflags +faststart out.mp4
+   ```
 
-Netlify builds and deploys every push to `main`, and creates a preview URL for every pull request.
-Set the `NEXT_PUBLIC_SITE_URL` environment variable in Netlify to the live URL
-(used for the sitemap, canonical URLs and link previews).
+## Deploying
+
+Netlify builds every push to `main` and makes a preview for every pull request. `NEXT_PUBLIC_SITE_URL` has to be set in Netlify to the live address, it's used for the sitemap, canonical links and link previews.
